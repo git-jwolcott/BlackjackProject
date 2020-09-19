@@ -1,4 +1,4 @@
-package com.skilldistillery.common.cards;
+package com.skilldistillery.cards.common;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Deck {
 
-	List<Card> deck; 
+	private List<Card> deck; 
 	
 	public Deck(){
 		deck = createDeck();
@@ -22,7 +22,7 @@ public class Deck {
 		return cards;
 	}
 	
-	public int checkDeckSize(List<Card> deck) {
+	public int checkDeckSize( ) {
 		return deck.size();
 	}
 	

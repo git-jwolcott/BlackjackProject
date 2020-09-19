@@ -1,4 +1,4 @@
-package com.skilldistillery.common.cards;
+package com.skilldistillery.cards.common;
 
 public enum Suit {
 	HEARTS("Hearts"),

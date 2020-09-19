@@ -1,4 +1,4 @@
-package com.skilldistillery.common.cards;
+package com.skilldistillery.cards.common;
 
 public class CardTest {
   public static void main(String[] args) {

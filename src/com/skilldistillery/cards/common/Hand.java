@@ -12,7 +12,7 @@ public abstract class Hand {
 	}
 	
 	public abstract int getHandValue();
-	protected abstract int getDealerHandShownValue();
+	public abstract StringBuilder getDealerHandShownValue();
 
 	public void clearHand() {
 		hand.clear();
@@ -26,11 +26,16 @@ public abstract class Hand {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Hand [hand=");
-		builder.append(hand);
-		builder.append(", toString()=");
-		builder.append(super.toString());
-		builder.append("]");
+		builder.append("Cards in hand ");
+		for (int i = 0; i < hand.size(); i++) {
+			if(i != hand.size()-1) {
+				builder.append(hand.get(i).toString());
+				builder.append(", ");
+			}
+			else if (i == hand.size()-1){
+				builder.append(hand.get(i).toString());
+			}
+		}
 		return builder.toString();
 	}
 

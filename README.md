@@ -6,13 +6,13 @@ Use classes to create a functional command line blackjack game.
 
 Upon starting the game, the deck is shuffled and each player is dealt two cards. The cards in the player's hand are shown along with the total value of the hand. The dealer's "faceup" card is shown along with its value. The system will check if either player was dealt blackjack. If either player has blackjack the hand is ended.
 
-If neither player was dealt blackjack, the player is given the opportunity to "hit" or "stand". If the player selects to "hit", the dealer deals another card. The card is added to the player's hand. The cards in the player's hand are shown along with the total value of the hand. If the player obtains 21, the player wins. If the additional card causes the player's total hand value to exceed 21, the player busted and the dealer wins. If the total value of the player's hand, including the additional card, is less than 21, the player may choose to "hit" or "stand". This process is repeated until the player either bust (total hand value is over 21) or selects to "stand".
+If neither player was dealt blackjack, the player is given the opportunity to "hit" or "stand". If the player selects to "hit", the dealer deals another card. The card is added to the player's hand. The cards in the player's hand are shown along with the total value of the hand. If the player obtains 21, the player wins. If the additional card causes the player's total hand value to exceed 21, the player busted and the dealer wins. If the total value of the player's hand, including the additional card, is less than 21, the player may choose to "hit" or "stand". The "hit"/"stand" process is repeated until the player either bust (total hand value is over 21) or selects to "stand" (not take any additional cards).
 
 Once the player has selected to "stand", meaning the total value of the player's hand is less than 21, the dealer takes a turn. While the value of dealer's hand is less than 17, the dealer automatically "hits". Just like with the player hand, if the dealer's hand value is 21, the dealer wins. If the dealer's hand value is greater than 21, the player wins. If the dealer's hand is more than 17 but less than 21, the dealer automatically "stands".
 
 Once both players have stopped taking additional cards and have hand values less than 21, each player's hand is evaluate. The player with the hand value closest to 21, wins.
 
-Once a winner is determined, the winner is announced, the hand is ended, and the player is given the option to play again. If the player selects to play again, the hands are cleared and two cards are dealt to each player. If the player selects not to play again, the game is ended and the system is exited.
+Once a winner is determined, the winner is announced, the hand is ended, and the player is given the option to play again. If the player selects to play again, the hands are cleared, two cards are dealt to each player, and the game continues as described above. If the player selects not to play again, the game is ended and the system is exited.
 
 ### Topics
 * Java Fundamentals

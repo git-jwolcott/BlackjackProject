@@ -49,7 +49,8 @@ public class BlackjackDealer {
 
 	public void dealerHitorStand() {
 		System.out.println("Dealer " + bjHand.toString());
-		while(bjHand.getHandValue() < 17) {
+		boolean hasAce = bjHand.evaluateDealerHandForAce();
+		while((!hasAce && bjHand.getHandValue() < 17) || (hasAce && bjHand.getHandValue() == 17)) {
 			bjHand.addCard(deck.dealCard());
 			System.out.println("Dealer hits. \nDealer " + bjHand.toString());
 			continue;

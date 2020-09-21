@@ -15,12 +15,12 @@ public class BlackjackTableApp {
 		// local variables
 		BlackjackDealer dealer = new BlackjackDealer();
 		BlackjackPlayer player = new BlackjackPlayer();
-		// start playing
-		dealer.suffleDeck();
 		setupBlackjackGame(dealer, player);
 	}
 
 	public void setupBlackjackGame(BlackjackDealer dealer, BlackjackPlayer player) {
+		// start playing
+		dealer.suffleDeck();
 		// give each player one card until all players have two cards
 		for (int i = 0; i < 2; i++) {
 			player.addCard(dealer.dealCard());
@@ -70,19 +70,21 @@ public class BlackjackTableApp {
 				// check if new card has caused the player to bust
 				if (player.bjHand.isBust()) {
 					System.out.println("Busted! Dealer Wins!");
+					System.out.println("Player " + player.bjHand.getHandValue() + " " + player.bjHand.toString());
 					//play again?
 					playAgain(dealer, player);
 				}
 				// check if new card has caused the player to get blackjack
 				else if (player.bjHand.isBlackjack()) {
 					System.out.println("Blackjack! Player wins!");
+					System.out.println("Player " + player.bjHand.toString());
 					// play again?
 					playAgain(dealer, player);
 				}
 				// player hasn't busted nor obtained blackjack, show hand value and ask to hit
 				// or stay
 				else {
-					System.out.println("Player Hand Value: " + player.bjHand.getHandValue() + " " + player.bjHand.toString());
+					System.out.println("Player " + player.bjHand.toString());
 					continue;
 				}
 

@@ -16,10 +16,7 @@ public abstract class Hand {
 
 	public void clearHand() {
 		hand.clear();
-// 		for (Card card : hand) {
-//			hand.remove(card);
-//		}
-//		hand = new ArrayList<>();
+		System.out.println(hand.toString());
 	}
 	
 

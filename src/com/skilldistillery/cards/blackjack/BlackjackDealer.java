@@ -1,6 +1,7 @@
 package com.skilldistillery.cards.blackjack;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.skilldistillery.cards.common.Card;
@@ -8,16 +9,17 @@ import com.skilldistillery.cards.common.Deck;
 import com.skilldistillery.cards.common.Hand;
 
 public class BlackjackDealer {
-	//give the dealer a deck of cards
+	// give the dealer a deck of cards
 	Deck deck = new Deck();
-	//the dealer is also a player, give the dealer a blackjackHand
+	// the dealer is also a player, give the dealer a blackjackHand
 	Hand hand = new BlackjackHand();
-	//cast hand to a blackjack so you can use BlackjackHand specific methods
+	// cast hand to a blackjack so you can use BlackjackHand specific methods
 	public BlackjackHand bjHand = (BlackjackHand) hand;
 
 	public void suffleDeck() {
+		List<Card> cardList = deck.createDeck();
 		System.out.println("Shuffling the deck.");
-		deck.shuffel();
+		Collections.shuffle(cardList);
 	}
 
 	public Card dealCard() {
@@ -50,12 +52,12 @@ public class BlackjackDealer {
 	public void dealerHitorStand() {
 		System.out.println("Dealer " + bjHand.toString());
 		boolean hasAce = bjHand.evaluateDealerHandForAce();
-		while((!hasAce && bjHand.getHandValue() < 17) || (hasAce && bjHand.getHandValue() == 17)) {
+		while ((!hasAce && bjHand.getHandValue() < 17) || (hasAce && bjHand.getHandValue() == 17)) {
 			bjHand.addCard(deck.dealCard());
 			System.out.println("Dealer hits. \nDealer " + bjHand.toString());
 			continue;
 		}
-		if(bjHand.getHandValue() >= 17 && bjHand.getHandValue() < 21) {
+		if (bjHand.getHandValue() >= 17 && bjHand.getHandValue() < 21) {
 			System.out.println("Dealer stays. ");
 		}
 	}

@@ -70,8 +70,8 @@ public class BlackjackTableApp {
 				// check if new card has caused the player to bust
 				if (player.bjHand.isBust()) {
 					System.out.println("Busted! Dealer Wins!");
-					System.out.println("Player " + player.bjHand.getHandValue() + " " + player.bjHand.toString());
-					//play again?
+					System.out.println("Player " + player.bjHand.toString());
+					// play again?
 					playAgain(dealer, player);
 				}
 				// check if new card has caused the player to get blackjack
@@ -109,11 +109,11 @@ public class BlackjackTableApp {
 		dealer.dealerHitorStand();
 		if (dealer.bjHand.isBlackjack()) {
 			System.out.println("Blackjack! Dealer wins!");
-			//play again?
+			// play again?
 			playAgain(dealer, player);
 		} else if (dealer.bjHand.isBust()) {
 			System.out.println("Dealer busted! Player wins!");
-			//play again?
+			// play again?
 			playAgain(dealer, player);
 		} else {
 			evaluateHands(dealer, player);
@@ -124,17 +124,17 @@ public class BlackjackTableApp {
 	public void evaluateHands(BlackjackDealer dealer, BlackjackPlayer player) {
 		// who's hand is larger but not busted?
 		if (dealer.bjHand.getHandValue() > player.bjHand.getHandValue()) {
-			System.out.println("Dealer hand equals " + dealer.bjHand.getHandValue() + "\nPlayer hand equals "
+			System.out.println("Dealer Hand Value = " + dealer.bjHand.getHandValue() + "\nPlayer Hand Value = "
 					+ player.bjHand.getHandValue() + "\nDealer Wins!");
 			playAgain(dealer, player);
 		} else if (dealer.bjHand.getHandValue() < player.bjHand.getHandValue()) {
-			System.out.println("Dealer hand equals " + dealer.bjHand.getHandValue() + "\nPlayer hand equals "
+			System.out.println("\"Dealer Hand Value = " + dealer.bjHand.getHandValue() + "\nPlayer Hand Value = "
 					+ player.bjHand.getHandValue() + "\nPlayer Wins!");
 			playAgain(dealer, player);
 		}
 		// if the hands are equal, no winner game is pushed.
 		else {
-			System.out.println("Dealer hand equals " + dealer.bjHand.getHandValue() + "\nPlayer hand equals "
+			System.out.println("\"Dealer Hand Value = " + dealer.bjHand.getHandValue() + "\nPlayer Hand Value = "
 					+ player.bjHand.getHandValue() + "\nHands are tied. Game is pushed. No winner.");
 			playAgain(dealer, player);
 		}

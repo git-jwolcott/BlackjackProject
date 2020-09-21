@@ -19,8 +19,8 @@ public class BlackjackPlayer {
 		userInput = new Scanner(System.in);
 		System.out.println("Do you want to hit or stand? Enter h for hit or s for stand. ");
 		char choice = Character.toLowerCase((userInput.next().charAt(0)));
-			return choice;
-		}
+		return choice;
+	}
 
 	public char playAgain() {
 		userInput = new Scanner(System.in);
@@ -28,6 +28,5 @@ public class BlackjackPlayer {
 		char choice = Character.toLowerCase((userInput.next().charAt(0)));
 		return choice;
 	}
-	
-}
 
+}
